@@ -1,0 +1,80 @@
+﻿<div class="holdings-detailed">
+    <div class="component-title">
+        <a href="" ng-click="ctrl.goToPage()">
+            <img class="component-title-img" src="@Url.Content("~/Content/customer_data/current_customer/holdings-icon.png")" alt="" />
+            <div class="main-fore-color component-title-text">פירוט אחזקות</div>
+        </a>
+    </div>
+    <div id="holdingsDetailedGrid" class="ng-hide"
+         danel-grid
+         danel-grid-set="ctrl.setgrid"
+         danel-model="ctrl.holdings.Holdings"
+         ng-show="!!ctrl">
+        <columns>
+            <column>
+                <title>מס' נייר</title>
+                <field>ID</field>
+                <width>100px</width>
+                <type>number</type>
+                <makeIntegar>true</makeIntegar>
+            </column>
+            <column>
+                <title>שם נייר</title>
+                <field>Name</field>
+                <width>150px</width>
+                <type>string</type>
+                <class>rtl</class>
+            </column>
+            <column>
+                <title>אפיק ראשי</title>
+                <field>ChannelName</field>
+                <width>150px</width>
+                <type>string</type>
+            </column>
+            <column>
+                <title>מטבע</title>
+                <field>Currency</field>
+                <width>100px</width>
+                <type>string</type>
+                <filterable>true</filterable>
+            </column>
+            <column>
+                <title>כמות</title>
+                <field>Quantity</field>
+                <width>100px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+                @*  <footertemplate>#=sum#</footertemplate>*@
+            </column>
+            <column>
+                <title>שער אחרון</title>
+                <field>LastRate</field>
+                <width>100px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+            </column>
+            <column>
+                <title>(שווי (שח</title>
+                <field>Amount</field>
+                <width>130px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+            </column>
+            <column>
+                <title>אחוז מהתיק</title>
+                <field>PercentOfPortfolio</field>
+                <width>100px</width>
+                <format>{0:n2} %</format>
+                <type>number</type>
+            </column>
+        </columns>
+
+        <pageable>false</pageable>
+    </div>
+    <div class="component-link" ng-show="ctrl.showTitle">
+        <a href="" ng-click="ctrl.goToPage()">
+            <div class="main-fore-color component-link-text">להרכב תיק מפורט</div>
+            <img class="component-link-img" src="~/Content/customer_data/current_customer/left-link-icon.png" alt="" />
+        </a>
+    </div>
+</div>

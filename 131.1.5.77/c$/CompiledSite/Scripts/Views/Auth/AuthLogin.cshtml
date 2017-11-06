@@ -1,0 +1,227 @@
+﻿<div class="login-view view">
+    <div class="login-component">
+        <div class="d-component-t10 section login">
+
+            <div class="component-t10-title">
+                <img class="component-t10-img" src="@Url.Content("~/Content/customer_data/current_customer/holdings-page-icon.png")" alt="" />
+                <div class="component-t10-text main-fore-color">כניסה</div>
+            </div>
+
+            @*<div class="title">
+                    כניסה
+                </div>*@
+
+            <div class="content">
+                <div class="login-controls">
+                    <div class="field user-name">
+                        <div class="field-editor">
+                            <input ng-keypress="ctrl.onKeyPress($event)" autocomplete="off" maxlength="9" type="text" ng-model="ctrl.userName" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" placeholder="שם משתמש (ת.ז)"  />
+                        </div>
+
+                    </div>
+
+                    <div class="field password">
+                        <div class="field-editor">
+                            <input ng-keypress="ctrl.onKeyPress($event)" autocomplete="off" ng-if="!ctrl.showPassword" type="password" maxlength="20" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" ng-model="ctrl.password" placeholder="סיסמה" />
+                        </div>
+                        <div class="field-editor">
+                            <input autocomplete="off" ng-if="ctrl.showPassword" type="text" maxlength="20" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" ng-model="ctrl.password" placeholder="סיסמה" />
+                        </div>
+
+                    </div>
+
+                    <div class="login-action-buttons">
+                        <div class="float-right">
+                            <input type="checkbox" ng-model="ctrl.showPassword" />
+                            הצג סיסמה
+                        </div>
+                        <div class="float-left">
+                            <a style="text-decoration:none;color:#0182c3;cursor:pointer" ng-click="ctrl.openForgotUserNameWindow()">שכחתי משתמש</a>
+                            <span>/</span>
+                            <a style="text-decoration:none;color:#0182c3;cursor:pointer" ng-click="ctrl.openForgotPasswordWindow()">שכחתי סיסמה</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="main-back-color" ng-click="ctrl.login()">כניסה</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-component-t10 section login">
+            <div class="component-t10-title">
+                <img class="component-t10-img" src="@Url.Content("~/Content/customer_data/current_customer/plus.png")" alt="" />
+                <div class="component-t10-text main-fore-color">רישום</div>
+            </div>
+
+            @*<div class="title">
+                    רישום
+                </div>*@
+
+            <div class="content">
+                <div class="login-text">
+                    לקוח/ה יקרים, אם הנכם מעוניינים לצפות בתיק ההששקעות שלכם בצורה מקוונת אנא לחצו על "פניה להנפקת פרטי גישה".
+                    <p>אנו נשמח אם תצטרף לחוג לקוחותינו שנהנים מגישה ישירה למידע על התיק שלהם בצורה ויזואלית וידידותית. </p>
+                </div>
+
+                <div class="actions">
+                    <button class="main-back-color" ng-click="ctrl.openNewRegisterWindow()">פניה להנפקת פרטי גישה</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-view-embedded" id="contactWindow">
+    <div name="contactForm" class="contact-form">
+        <div>לקוח/ה יקר/ה</div>
+        <div>{{ctrl.forgotIDMsg}}</div>
+    </div>
+</div>
+
+<div class="contact-view-embedded" id="new-register-window">
+    <div name="contactForm" class="contact-form">
+        <div>יש למלא את  <b>כל</b> הפרטים הבאים,</div>
+        <div>לאחר שליחת הטופס אנו נשלח ל{{ctrl.device}} שלך סיסמה זמנית</div>
+        <p>
+            <span class="label" style="margin-left: 126px;"> שם</span>
+            <input ng-class="{'error-border':ctrl.invalidSenderName}" name="senderName" type="text" ng-model="ctrl.message.senderName" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" placeholder="שם"  ng-hide="ctrl.userLoggedIn" />
+            @*<span class="field-validation" ng-class="{visible:ctrl.invalidSenderName}">נתון חובה</span>*@
+            <span class="asterisk">*</span>
+
+        </p>
+        <p>
+            <span class="label" style="margin-left:55px;">דואר אלקטרוני</span>
+            <input ng-class="{'error-border':ctrl.invalidEmail}" autocomplete="off" name="email" ng-model="ctrl.message.email" type="email" class="lower-case" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" placeholder="דואר אלקטרוני" ng-hide="ctrl.userLoggedIn" />
+            @*<span class="field-validation"  ng-class="{visible:ctrl.invalidEmail}>נתון חובה</span>*@
+            <span class="asterisk">*</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:70px;">תעודת זהות</span>
+            <input ng-class="{'error-border':ctrl.invalidIdentityNumber}" autocomplete="off" name="identityNumber" maxlength="9" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="text" ng-model="ctrl.message.identityNumber" placeholder="תעודת זהות" ng-hide="ctrl.userLoggedIn" />
+            @*<span class="field-validation" ng-class="{visible:ctrl.invalidIdentityNumber}">נתון חובה</span>*@
+            <span class="asterisk">*</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:110px;">טלפון</span>
+            <input ng-class="{'error-border':ctrl.invalidPhone}" autocomplete="off" name="phone" maxlength="15" class="contact-form-input" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode==45' type="text" ng-model="ctrl.message.phone" placeholder="טלפון" ng-hide="ctrl.userLoggedIn" />
+            @*<span class="field-validation" ng-class="{visible:ctrl.invalidPhone}">נתון חובה</span>*@
+            <span class="asterisk">*</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:70px;">תאריך לידה</span>
+
+
+            <input id="datepicker" ng-click="ctrl.openDatePicker()" class="birth-date" k-ng-model="ctrl.message.birthDate" />
+        </p>
+        <p ng-show="ctrl.displaySigninOptions">
+            <span class="label">קבלת הודעה באמצעות:</span>
+            <input type="radio" id="1" ng-model="ctrl.webSiteSigningOptions" value="1" class="regular-radio" />אי-מייל
+            <input type="radio" id="1" ng-model="ctrl.webSiteSigningOptions" value="2" class="regular-radio" />מסרון
+            <span class="field-validation" ng-class="{visible:ctrl.invalidContent}">נתון חובה</span>
+        </p>
+        <p>
+
+            <span>הזן קוד</span>
+            <span id="txtCaptchaDiv" class="txt-captcha" style="margin-left:38px;">{{ctrl.txtCaptchaDiv}} </span>
+            <input type="hidden" id="txtCaptcha" ng-model="ctrl.txtCaptcha" />
+            <input  ng-class="{'error-border':ctrl.invalidCaptcha}" type="text" name="txtInput" id="txtInput" size="15" ng-model="ctrl.userCaptcha" placeholder="הזן קוד" />
+            <span class="asterisk">*</span>
+        </p>
+        <p>
+            <span class="asterisk-legend">
+                <span class="asterisk">*</span>
+                <span>-</span>
+                <span>נתון חובה</span>
+            </span>
+
+        </p>
+        <button ng-disabled="ctrl.isSendBtnDisabled" class="blue-button" ng-click="ctrl.sendNewRegister()" type="button" id="submit">שליחה</button>
+        <button class="blue-button fl" ng-click="ctrl.closeWindows()">ביטול</button>
+
+
+
+
+    </div>
+
+
+</div>
+
+
+<div class="contact-view-embedded" id="forgot-password-window">
+    <div  name="resetPasswordForm" class="contact-form">
+        <div>יש להזין את שם המשתמש <b>כפי שהוזן בעת ההרשמה למערכת</b></div>
+        <div>לאחר ביתוע הפעולה הפעולה אנו נשלח הודעה מתאימה ל {{ctrl.device}}</div>
+        <p>
+            <span class="label" style="margin-left:55px;">שם משתמש (ת.ז) </span>
+            <input ng-class="{'error-border':ctrl.invalidSenderName}" autocomplete="off" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" name="senderName" type="text" ng-model="ctrl.message.senderName" placeholder="שם משתמש (ת.ז) " />
+            @*   <span class="field-validation profile-view-error" ng-class="{visible:ctrl.invalidSenderName}">נתון חובה</span>*@
+            <span class="asterisk">*</span>
+        </p>
+        <p>
+
+            <span>הזן קוד</span>
+            <span id="txtCaptchaDiv" class="txt-captcha" style="margin-left:63px;">{{ctrl.txtCaptchaDiv}} </span>
+            <input type="hidden" id="txtCaptcha" ng-model="ctrl.txtCaptcha" />
+            <input ng-keypress="ctrl.onForgotPasswordKeyPress($event)" ng-class="{'error-border':ctrl.invalidCaptcha}" type="text" name="txtInput" id="txtInput" size="15" ng-model="ctrl.userCaptcha" placeholder="הזן קוד" />
+            @*<span class="field-validation" ng-class="{visible:ctrl.invalidCaptcha}">קוד אינו תקין</span>*@
+            <span class="asterisk">*</span>
+        </p>
+        <p>
+            <span class="asterisk-legend">
+                <span class="asterisk">*</span>
+                <span>-</span>
+                <span>נתון חובה</span>
+            </span>
+
+        </p>
+        <button ng-disabled="ctrl.isSendForgotPasswordBtnDisabled" ng-click="ctrl.sendForgotPassword()" class="blue-button" type="button" id="submit">אישור</button>
+        <button ng-disabled="ctrl.isSendForgotPasswordBtnDisabled" class="blue-button fl" ng-click="ctrl.closeWindows()">ביטול</button>
+    </div>
+</div>
+<div class="reset-password-window" id="reset-password-window">
+    <p>
+        @*  {{ctrl.resetPasswordReason}}*@
+        <div>זוהה נסיון כניסה למערכת המחייב שינוי סיסמה.</div>
+        <div>יש להזין סיסמה חדשה, לאמת אותה, ולהיכנס לאתר מחדש עם הסיסמה החדשה.</div>
+
+        <div>יש להזין סיסמה בת לפחות 7 תווים </div>
+        <div>לפחות ספרה אחת ולפחות אות אחת</div>
+        <div>יש חשיבות לאותיות קטנות וגדולות</div>
+
+    </p>
+    <p>
+        <span class="label" style="margin-left:97px;">סיסמה חדשה</span>
+        <input autocomplete="off" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" class="passwordText" maxlength="20" name="pass1" type="password" ng-model="ctrl.new_password" placeholder="סיסמה חדשה" />
+        <span class="field-validation change-pass-view-error" ng-class="{visible:ctrl.invalidNewPassword1}">{{ctrl.invalidNewPassword1Reason}}</span>
+    </p>
+    <p>
+        <span class="label" style="margin-left:56px;">אימות סיסמה חדשה</span>
+        <input autocomplete="off" onkeypress="return event.charCode != 40 && event.charCode != 41 && event.charCode != 123 && event.charCode != 125 && event.charCode != 91 && event.charCode != 93 && event.charCode != 60 && event.charCode != 62" class="passwordText" name="pass2" maxlength="20" type="password" ng-model="ctrl.new_password_2" placeholder="אימות סיסמה חדשה" />
+        <span class="field-validation change-pass-view-error" ng-class="{visible:ctrl.invalidNewPassword2}">סיסמהות אינן זהות</span>
+    </p>
+    <p class="btn-p">
+        <button ng-disabled="ctrl.isResetPasswordBtnDisabled" class="blue-button" ng-click="ctrl.resetPassword()" id="submit">עדכון סיסמה</button>
+        <button class="blue-button fl" ng-click="ctrl.closeWindows()">ביטול</button>
+    </p>
+</div>
+<div class="save-status-view" id="statusWindow">
+    <p>{{ctrl.$scope.saveResult}}</p>
+    <button class="blue-button" class="blue-button" type="button" ng-click="ctrl.closeStatusWindow()">אישור</button>
+</div>
+
+<div class="code-injection-view" id="codeInjectionWindow">
+
+    <div>סיסמה זמנית נשלחה לטלפון המסתיים בספרות: {{ctrl.last3Digits}}</div>
+    <div><b>אנא הזן את הסיסמה</b></div>
+    <p>
+        <input ng-keypress="ctrl.onCodeInjectionKeyPress($event)" class="input-padding" ng-class="{'error-border':ctrl.invalidCodeInjection}" type="text" name="codeInjection" ng-model="ctrl.codeInjection" />
+        <span ng-click="ctrl.resendCode()" class="resend-code">שלח שוב</span>
+    </p>
+    <button class="blue-button" type="button" ng-click="ctrl.checkCodeInjection()">אישור</button>
+</div>
+
+
+
+

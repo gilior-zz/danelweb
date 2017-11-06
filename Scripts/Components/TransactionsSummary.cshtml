@@ -1,0 +1,38 @@
+﻿<div class="transactions-summary " ng-cloak>
+    <div class="section account-details">
+        <div class="row">
+            <span class="label">חשבון:</span>
+            <span class="account-number" >{{ctrl.transactionsSummary.Account.Name ||'-'}}</span>
+        </div>
+
+        <div class="row">
+            <span class="label">מנוהל בבנק:</span>
+            <span class="managed-by">{{ctrl.transactionsSummary.Account.ManagedBy ||'-'}}</span>
+        </div>
+        <div class="row">
+            <span class="label">מדיניות:</span>
+            <span title="{{ctrl.transactionsSummary.Account.InvestmentPolicy}}" class="managed-by">{{(ctrl.transactionsSummary.Account.InvestmentPolicy| limitTo:22) || '-'}}</span>
+        </div>
+    </div>
+    <div class="section total-commisions-last-year">
+        <div class="title">מס בשנה האחרונה</div>
+        <div class="transactions-value">
+            <span >{{(ctrl.transactionsSummary.TotalTaxLastYear | currency:' ₪':2) ||'-'}}</span>
+        </div>
+    </div>
+
+    <div class="section total-commisions-buy-year">
+        <div class="title"> קניות בשנה אחרונה</div>
+        <div class="transactions-value">
+            <span >{{(ctrl.transactionsSummary.TotalBuyLastYear | currency:' ₪':2) ||'-'}}</span>
+            @* <danel-yield danel-model="ctrl.accountDash.YieldLastYear"></danel-yield>*@
+        </div>
+    </div>
+    <div class="section total-commisions-sell-year">
+        <div class="title">מכירות בשנה אחרונה</div>
+        <div class="transactions-value">
+            <span>{{(ctrl.transactionsSummary.TotalSellLastYear | currency:' ₪':2) ||'-'}}</span>
+            @*   <danel-yield danel-model="ctrl.accountDash.YieldStartYear"></danel-yield>*@
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿<div class="holdings-grouped-donut">
+    <div class="chart"
+         danel-chart
+         legend-visible="false"
+         danel-model="ctrl.holdings.Categories"
+         danel-chart-type="donut"
+         danel-value-field="PercentOfPortfolio"
+         danel-text-field="Name"
+         danel-chart-area-margin="0,0,0,0"
+         danel-chart-series-label
+         danel-chart-series-label-template="#= category # #= kendo.format('{0:P}', percentage)#">
+    </div>
+</div>

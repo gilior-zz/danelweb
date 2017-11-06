@@ -1,0 +1,39 @@
+﻿<div class="contact-view">
+    <div novalidate name="contactForm" class="contact-form">
+        <div>נא למלא את  כל הפרטים הבאים,</div>
+        <div>לאחר שליחת ההודעה אנו ניצור עמך קשר</div>
+        <p>
+            <span class="label" style=" margin-left: 126px;"> שם</span>
+            <span>{{ctrl.message.senderName}}</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:55px;">דואר אלקטרוני</span>
+            <span>{{ctrl.message.email}}</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:110px;">טלפון</span>
+            <span>{{ctrl.message.phone}}</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:115px;">נושא</span>
+            <span>
+                <select class="select-subject"
+                        danel-drop-down-list
+                        danel-data="ctrl.subjects"
+                        danel-selected="ctrl.selectedSubjectID"
+                        danel-data-text-field="SubjectName"
+                        danel-data-value-field="SubjectID"></select>
+            </span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:110px;vertical-align:top">תוכן</span>
+            <textarea placeholder=" תוכן הודעה" name="content" rows="5" ng-model="ctrl.message.content"  />
+            <span class="field-validation" ng-class="{visible:ctrl.invalidContent}">נתון חובה</span>
+        </p>
+        <button ng-disabled="ctrl.isSendBtnDisabled" class="sendBtn" ng-click="ctrl.Send()" type="button" id="submit">שליחה</button>
+    </div>
+</div>
+<div class="save-status-view" id="statusWindow">
+    <p>{{ctrl.saveResult}}</p>
+    <button class="closeStatusWindowBtn" type="button" ng-click="ctrl.closeStatusWindow()">אישור</button>
+</div>

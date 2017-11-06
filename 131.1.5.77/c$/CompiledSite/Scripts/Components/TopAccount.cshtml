@@ -1,0 +1,33 @@
+﻿<div class="top-account">
+   @* <advisor-details></advisor-details>*@
+    <div class="row">
+        <div class="column">
+
+            <div class="page-name">
+                <img class="page-name-img" ng-src="{{ctrl.getPageImageUrl()}}" alt="" />
+                <div class="main-fore-color page-name-text">{{ctrl.getPageName()}}&nbsp;</div>
+            </div>
+
+            <div class="page-name"></div>
+
+            <div class="account-selector" ng-class="{disabledAccountSelect: ctrl.authService.userDetails.authorizedEntityList.length==1}">
+                <span class="account-caption">שם חשבון:</span>
+                <span ng-show="ctrl.accounts">
+                    <select style="float:left" class="select-account"
+                            danel-drop-down-list
+                            danel-data="ctrl.accounts"
+                            danel-selected="ctrl.selectedAccountNumber"
+                            danel-data-text-field="Name"
+                            danel-data-value-field="AccountID"></select>
+                </span>
+                <span class="no-data" ng-hide="ctrl.accounts">אין נתונים</span>
+               
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+

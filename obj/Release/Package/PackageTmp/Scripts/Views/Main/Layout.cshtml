@@ -1,0 +1,52 @@
+﻿@model LayoutModel
+
+<!DOCTYPE html>
+
+<html ng-app="Danel" ng-strict-di>
+<head>
+
+    <script src="~/Scripts/Lib/jquery/jquery.js"></script>
+ 
+    <title>Danel</title>
+
+    <meta name="viewport" />
+
+    @Styles.Render("~/Content/css")
+
+    <base href="@this.Model.BaseHref" />
+    @* <link rel="stylesheet" type="text/css" href="~/Content/Site.less"/>*@
+    @* <script src="~/Scripts/Lib/less/less-1.5.1.js" type="text/javascript"></script>*@
+    <link rel="shortcut icon" href="~/Content/customer_data/current_customer/holdings-icon.png" type="image/x-icon" />
+</head>
+
+<body class="k-rtl">
+    <danel-admin-panel ng-cloak></danel-admin-panel>
+    <danel-top-header></danel-top-header>
+    <danel-top-menu></danel-top-menu>
+
+    <div class="content">
+        <danel-site-progress></danel-site-progress>
+
+        <div ui-view></div>
+    </div>
+
+    @foreach (var path in this.Model.Bundles)
+    {
+        @Scripts.Render(path)
+        @Html.Raw("\n")
+    }
+
+    @Html.Action("AppDetails", "Main")
+    @Html.Action("WebSiteParams", "Main")
+    @*@if (true)
+        {
+            @Html.Action("ResetPassword", "Auth")
+        }*@
+    @*<div class="component-pane">*@
+    @*<img class="billboard-image" src="~/Content/images/customer/billaboard.png" alt="" />*@
+    <danel-billboard></danel-billboard>
+    <danel-footer></danel-footer>
+    @*</div>*@
+
+</body>
+</html>

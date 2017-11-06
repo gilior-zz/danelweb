@@ -1,0 +1,31 @@
+﻿<div class="holdings-grouped-grid">
+    <div class="ng-hide"
+         danel-grid
+         danel-model="ctrl.holdings.Categories"
+         ng-show="!!ctrl">
+        <columns>
+
+            <column>
+                <title>{{ctrl.groupName}}</title>
+                <field>Name</field>
+                <width>100px</width>
+            </column>
+            <column>
+                <title>אחוז מהתיק</title>
+                <field>PercentOfPortfolio</field>
+                <format>{0:n2}</format>
+                <width>100px</width>
+            </column>
+            <column>
+                <title>שווי</title>
+                <field>Amount</field>
+                <format>{0:n2}</format>
+                <width>150px</width>
+            </column>
+        </columns>
+        <pageable>false</pageable>
+    </div>
+    <div class="portfolio-amount-wrapper">
+        <span>סהכ שווי תיק</span>  <span class="portfolio-amount">{{ctrl.totalPortfolioAmount| currency:"&#8362":0}}</span>
+    </div>
+</div>

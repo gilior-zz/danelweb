@@ -1,0 +1,76 @@
+﻿
+<div class="holdings-grouped-dash dash">   
+    
+    
+    <div class="component-title">
+        <a href="" ng-click="ctrl.goToPage()">
+            <img class=" component-title-img" src="@Url.Content("~/Content/customer_data/current_customer/holdings-icon.png")" alt="" />
+            <div class="main-fore-color component-title-text">הרכב תיק</div>
+        </a>
+    </div> 
+    
+    <div class="component-pane">
+
+        <div class="holdings-grouped-dash-components">
+            <div  class="portfolio-dash-wrapper">              
+                <div class="chart"
+                     danel-chart
+                     legend-visible="false"
+                    labels-visible="true"
+                     title-visible="false"
+                     danel-model="ctrl.holdings.Categories"
+                     danel-chart-type="donut"
+                     danel-value-field="PercentOfPortfolio"
+                     height="400"
+                     danel-text-field="Name"
+                     danel-chart-area-margin="0,0,0,0"
+                     danel-chart-series-label
+                     danel-chart-series-label-template="#= category # #= kendo.format('{0:P}', percentage)#">
+                </div>
+            </div>
+
+            @*<div style="" class="portfolio-grid-wrapper">            
+                <div class="ng-hide"
+                     danel-grid
+                     title-visible="false"
+                     danel-grid-set="ctrl.setgrid"
+                     danel-model="ctrl.holdings.Categories"
+                     ng-show="!!ctrl">
+                    <columns>
+
+                        <column>
+
+                            <field>Color</field>
+                            <width>30px</width>
+                            <encoded>false</encoded>
+                        </column>
+                        <column>
+
+                            <field>Name</field>
+                            <width>100px</width>
+                        </column>
+                        <column>
+
+                            <field>PercentOfPortfolio</field>
+                            <format>{0:n2}</format>
+                            <width>100px</width>
+                        </column>
+                    </columns>
+                    <pageable>false</pageable>
+                </div>
+            </div>*@
+        </div>
+
+    </div>
+
+    
+    <div class="component-link" >
+        <a href="" ng-click="ctrl.goToPage()">
+            <div class="main-fore-color component-link-text">להרכב תיק מפורט</div>
+            <img class="component-link-img" src="~/Content/customer_data/current_customer/left-link-icon.png" alt="" />
+        </a>
+    </div>
+
+</div>
+
+

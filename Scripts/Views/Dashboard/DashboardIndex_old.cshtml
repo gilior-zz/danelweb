@@ -1,0 +1,38 @@
+﻿<div class="dashboard-view">
+
+    <div class="row">
+        <div class="column">
+            <danel-account-dash />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column2 col-lg-6">
+            <div class="chart"
+                 danel-chart
+                 legend-visible="true"
+                 labels-visible="true"
+                 danel-model="ctrl.holdings.Categories"
+                 danel-chart-type="donut"
+                 danel-value-field="PercentOfPortfolio"
+                 danel-text-field="Name"
+                 danel-chart-area-margin="0,0,0,0"
+                 danel-chart-series-label
+                 height="400"
+                 danel-chart-series-label-template="#= category # #= kendo.format('{0:P}', percentage)#">
+
+            </div>
+        </div>
+        <div class="column2 col-lg-6">
+            <danel-yield-dash class="d-component-t1" danel-show-index="false" />
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+          @*  <danel-transaction-dash class="d-component-t2" />*@
+            <danel-holdings-detailed class="d-component-t1"></danel-holdings-detailed>
+        </div>
+    </div>
+</div>

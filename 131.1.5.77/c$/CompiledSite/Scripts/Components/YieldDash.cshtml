@@ -1,0 +1,35 @@
+﻿<div class="yield-dash dash" danel-diplay-title="true">
+
+    <div class="component-title" ng-show="ctrl.showTitle">
+        <a href="" ng-click="ctrl.goToPage()">
+            <img class=" component-title-img" src="@Url.Content("~/Content/customer_data/current_customer/yield-icon.png")" alt="" />
+            <div class="main-fore-color component-title-text">תשואות</div>
+        </a>
+    </div>
+
+    <div class="component-pane">
+        <danel-index-selection></danel-index-selection>
+
+        <div class="chart ltr"
+             danel-chart
+             legend-visible="false"
+            
+             danel-chart-set="ctrl.setchart"
+             danel-model="ctrl.yields.Months"
+             danel-chart-type="column"
+             danel-value-field="NetAccumulated"
+             height="400"
+             danel-text-field="Month"
+             danel-color="#B6CA82"
+             danel-chart-category-label-template="ctrl.categoryLabelTemplate"
+             danel-chart-area-margin="40">
+        </div>
+    </div>
+
+    <div class="component-link" ng-show="ctrl.showTitle">
+        <a href="" ng-click="ctrl.goToPage()">
+            <div class="main-fore-color component-link-text">למסך תשואות</div>
+            <img class="component-link-img" src="~/Content/customer_data/current_customer/left-link-icon.png" alt="" />
+        </a>
+    </div>
+</div>

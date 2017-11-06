@@ -1,0 +1,14 @@
+﻿<div class="portfolio-dash dash">
+    <span class="title">הרכב תיק</span>
+
+    <div class="chart"
+         danel-chart
+         danel-model="ctrl.portfolio.Categories"
+         danel-chart-type="donut"
+         danel-value-field="PercentOfPortfolio"
+         danel-text-field="Name"
+         danel-chart-area-margin="0,40,0,0"
+         danel-chart-series-label
+         danel-chart-series-label-template="#= category # #= kendo.format('{0:P}', percentage)#">
+    </div>
+</div>

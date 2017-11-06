@@ -1,0 +1,24 @@
+﻿<div>
+  <div style='direction:rtl;font-family: cursive; margin-bottom:20px'>
+    <h4 style='margin-bottom:6px;'>לקוח/ה נכבדים,</h4>
+    <div  style='font-size:16px;margin-bottom:6px;'>
+      <span> ההרשמה לאתר</span>
+      <websiteName></websiteName>
+      <span>הסתימה בהצלחה,</span>
+    </div>
+    <div>פרטי המשתמש לצפייה בחשבון המנוהל:</div>
+    <div>
+      <span>שם משתמש-</span>
+      <identityNumber></identityNumber>
+    </div>
+    <div>
+      <span  style='font-size:16px;margin-bottom:6px;'>סיסמה-</span>
+      <generatedPassword></generatedPassword>
+    </div>
+  </div>
+  <div style='text-align:center'>
+    <a href="">
+      <img src=""/>
+    </a>
+  </div>
+</div>

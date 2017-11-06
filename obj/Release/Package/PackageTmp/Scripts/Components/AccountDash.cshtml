@@ -1,0 +1,43 @@
+﻿<div class="account-dash dash" ng-cloak>
+    <div class="section account-details">
+        <div class="row">
+            <span class="label">חשבון:</span>
+            <span class="account-number">{{ctrl.accountDash.Account.Name || '-'}}</span>
+        </div>
+
+        <div class="row">
+            <span class="label">מנוהל בבנק:</span>
+            <span class="managed-by">{{ctrl.accountDash.Account.ManagedBy || '-'}}</span>
+        </div>
+        <div class="row">
+            <span class="label">מדיניות:</span>
+            <span title="{{ctrl.accountDash.Account.InvestmentPolicy}}" class="managed-by">{{(ctrl.accountDash.Account.InvestmentPolicy| limitTo:22) || '-'}}</span>
+        </div>
+    </div>
+    <div class="section portfolio-value">
+        <div class="title">שווי תיק</div>
+        <div class="value">{{(ctrl.accountDash.PortfolioValue | currency:' ₪':0)|| '-'}}</div>
+    </div>
+    <div class="section yield-start-year">
+        <div class="title">תשואה מתחילת השנה</div>
+        <div class="value ">
+            <danel-yield danel-model="ctrl.accountDash.YieldStartYear">{{}}</danel-yield>
+        </div>
+    </div>
+    <div class="section yield-last-year">
+        <div class="title">תשואה 12 חודשים אחרונים</div>
+        <div class="value">
+            <danel-yield danel-model="ctrl.accountDash.YieldLastYear">{{}}</danel-yield>
+        </div>
+    </div>
+    <div class="section yield-36-month">
+        <div class="title">
+            <span>תשואה</span>
+            <span>{{ctrl.WebSiteCustomYieldInMonths}}</span>
+            <span>חודשים אחרונים</span>
+        </div>
+        <div class="value">
+            <danel-yield danel-model="ctrl.accountDash.Yield3Years">{{}}</danel-yield>
+        </div>
+    </div>
+</div>

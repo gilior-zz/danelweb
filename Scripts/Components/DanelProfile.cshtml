@@ -1,0 +1,49 @@
+﻿<div>
+    <form novalidate name="profileForm" class="profile-form" ng-submit="ctrl.send()">
+
+        <h1>עדכון פרטים</h1>
+        <p>
+            <span class="label" style=" margin-left: 105px;"> כתובת</span>
+            <input class="formText" name="address" type="text" ng-model="ctrl.message.address" required placeholder="כתובת" autofocus />
+
+
+        </p>
+        <p>
+            <span class="label" style="margin-left:55px;">דואר אלקטרוני</span>
+            <input class="formText" name="email" type="email" ng-model="ctrl.message.email" placeholder="דואר אלקטרוני" required />
+
+
+        </p>
+        <p>
+            <span class="label" style="margin-left:110px;">טלפון</span>
+            <input class="formText" name="phone" type="text" ng-model="ctrl.message.phone" placeholder="טלפון" required />
+        </p>
+
+
+        <p>
+            <span class="label" style="margin-left:110px;">סיסמא</span>
+            @*<input name="phone" ng-click="openPasswordWindow()" type="button" value="שינוי סיסמא" />*@
+            <button class="openPass btn" type="button" ng-click="ctrl.openPasswordWindow()">שינוי סיסמא</button>
+        </p>
+        <button ng-disabled="ctrl.disable" class="saveBtn btn" type="submit" id="submit">{{ctrl.message.status}}</button>
+    </form>
+
+
+    <div id="window">
+        @*<danel-change-password></danel-change-password>*@
+        @*<h1>test</h1>
+            <h2>test2</h2>*@
+        @*<p>
+                <span class="label" style=" margin-left: 126px;">סיסמא חדשה</span>
+                <input class="formText" name="senderName" type="password" ng-model="ctrl.password_1" required placeholder="סיסמא חדשה" autofocus />
+            </p>
+            <p>
+                <span class="label" style="margin-left:55px;">סיסמא חדשה פעם נוספת</span>
+                <input class="formText" name="pass1" type="password" data-ma ng-model="ctrl.password_2" placeholder="סיסמא חדשה פעם נוספת" />
+            </p>
+            <p>
+                <button class="updatePass btn" name="pass2" ng-click="ctrl.handlePassword()">{{ctrl.passwordStatus}}</button>
+            </p>*@
+
+    </div>
+</div>

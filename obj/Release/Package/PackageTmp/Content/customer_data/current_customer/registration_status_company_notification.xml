@@ -1,0 +1,38 @@
+﻿<div style='direction:rtl;font-family: cursive; margin-bottom:20px'>
+  <h4 style='margin-bottom:6px;'>נסיון הרשמה לאתר</h4>
+  <div>
+    <h4 style='margin-bottom:6px;'>הפרטים הבאים הוזנו עי המשתמש</h4>
+    <div style='margin-bottom:6px;'>
+      <span>שם</span>
+      <span>:</span>
+      <senderName></senderName>
+    </div>
+    <div style='margin-bottom:6px;'>
+      <span>דואר אלקטרוני</span>
+      <span>:</span>
+      <email></email>
+    </div>
+    <div style='margin-bottom:6px;'>
+      <span>תעודת זהות</span>
+      <span>:</span>
+      <identityNumber></identityNumber>
+    </div>
+    <div style='margin-bottom:6px;'>
+      <span>טלפון</span>
+      <span>:</span>
+      <phone></phone>
+    </div>
+    <div style='margin-bottom:6px;'>
+      <span>תאריך לידה</span>
+      <span>:</span>
+      <birthDate></birthDate>
+    </div>
+   <div style='margin-bottom:6px;'>
+      <span>סטטוס</span>
+      <span>:</span>
+      <status></status>
+    </div>
+  </div>
+</div>
+
+

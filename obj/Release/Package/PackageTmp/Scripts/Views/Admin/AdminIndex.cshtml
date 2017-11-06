@@ -1,0 +1,69 @@
+﻿<div class="admin-view">
+    <p>
+        <span class="admin-view-tracking-label">איתור משתמש</span>
+    </p>
+    <div class="filter-panel">
+        <form class="admin-filer-form" novalidate name="adminFilterForm" ng-submit="ctrl.filter()">
+            <span>שם משתמש</span>
+            <input type="text" ng-model="ctrl.userNameFilter" />           
+            <span>מספר תעודת זהות</span>
+            <input type="text" ng-model="ctrl.idNumberFilter" />
+            <input type="submit" value="סינון" />
+
+        </form>
+    </div>
+    <div class="admin-filter-results">
+        <span ng-show="ctrl.filterResultsCount>1">נמצאו {{ctrl.filterResultsCount}}  תוצאות</span>
+        <span ng-show="ctrl.filterResultsCount==1">נמצאה תוצאה אחת</span>
+        <span ng-show="ctrl.filterResultsCount<1">אין תוצאות</span>
+        <input type="button" ng-show="ctrl.modelIsFiltered" ng-click="ctrl.resetFilter()" value="איפוס" />
+    </div>
+    <div class="ng-hide"
+         danel-grid
+         danel-model="ctrl.model.Users"
+         danel-grid-set="ctrl.setGrid"
+         ng-show="!!ctrl">
+        <div></div>
+        <columns>           
+                <column>
+                    <title>מספר תעודת זהות</title>
+                    <type>string</type>
+                    <field>UserID</field>
+                    <width>120px</width>
+                </column>
+                <column>
+                    <title>שם משתמש</title>
+                    <type>string</type>
+                    <field>UserName</field>
+                    <width>120px</width>
+                </column>
+                <column>
+                    <title>כתובת</title>
+                    <type>string</type>
+                    <field>UserAddress</field>
+                    <width>120px</width>
+                </column>
+                <column>
+                    <title>טלפון</title>
+                    <type>string</type>
+                    <field>UserPhone</field>
+                    <width>120px</width>
+                </column>
+                <column>
+                    <title>אי-מייל</title>
+                    <type>string</type>
+                    <field>UserEmail</field>
+                    <width>120px</width>
+                </column>
+
+                <column>
+                    <title>תאריך כניסה אחרון</title>
+                    <type>date</type>
+                    <format>{0:d}</format>
+                    <field>LastLoginDate</field>
+                    <width>120px</width>
+                </column>
+        </columns>
+        <pageable>false</pageable>
+    </div>
+</div>

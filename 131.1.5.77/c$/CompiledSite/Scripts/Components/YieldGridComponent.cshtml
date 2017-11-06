@@ -1,0 +1,78 @@
+﻿<div class="transaction-dash dash yield-grid">
+
+    <div class="component-title">
+        <a href="" ng-click="ctrl.goToPage()">
+            <img class="component-title-img" src="@Url.Content("~/Content/customer_data/current_customer/yield-icon.png")" alt="" />
+            <div class="main-fore-color component-title-text">פירוט תשואות</div>
+        </a>
+    </div>
+
+    <div class="ng-hide"
+         danel-grid
+         danel-model="ctrl.model.GridMonths"
+         danel-grid-set="ctrl.setgrid"
+         ng-show="!!ctrl">
+        <columns>
+            <column>
+                <title>תאריך</title>
+                <field>DateText</field>
+                <format>{0:d}</format>
+                <width>150px</width>
+            </column>
+
+            <column>
+                <title>שווי תיק</title>
+                <field>PortfolioValue</field>
+                <width>150px</width>
+                <format>{0:n2}</format>
+            </column>
+
+            <column>
+                <title>הפקדות</title>
+                <field>Deposits</field>
+                <width>150px</width>
+                <format>{0:n2}</format>
+            </column>
+
+            <column>
+                <title>משיכות</title>
+                <field>Withdrawals</field>
+                <width>150px</width>
+                <format>{0:n2}</format>
+            </column>
+
+            <column>
+                <title>רווח</title>
+                <field>Profit</field>
+                <format>{0:n2}</format>
+                <width>160px</width>
+            </column>
+
+            <column>
+                <title>מס</title>
+                <field>Tax</field>
+                <format>{0:n2}</format>
+                <width>100px</width>
+            </column>
+
+            <column>
+                <title>תשואה ברוטו</title>
+                <field>
+                    YieldGross
+                </field>
+                <format>{0:n2}</format>
+                <width>100px</width>
+            </column>
+
+            <column>
+                <title>תשואה נטו</title>
+                <field>Yield</field>
+                <format>{0:n2}</format>
+                <width>100px</width>
+            </column>
+        </columns>
+
+        <pageable>false</pageable>
+    </div>
+  
+</div>

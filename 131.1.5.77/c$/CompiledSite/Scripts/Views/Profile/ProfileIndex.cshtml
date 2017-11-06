@@ -1,0 +1,67 @@
+﻿<div class="profile-view">
+    @*  <danel-profile></danel-profile>*@
+    <div class="main-fore-color profile-header">תצוגת פרטים</div>
+    <p>
+        <span class="form-label"> כתובת</span>
+        <input autocomplete="off" disabled class="formText" name="address" type="text" ng-model="ctrl.message.address" placeholder="כתובת" autofocus />
+        @*    <span class="field-validation profile-view-error" ng-class="{visible:ctrl.invalidAddress}">נתון חובה</span>*@
+
+    </p>
+    <p>
+        <span class="form-label">דואר אלקטרוני</span>
+        <input autocomplete="off" disabled class="formText" name="email" type="email" ng-model="ctrl.message.email" placeholder="דואר אלקטרוני" />
+        @*   <span class="field-validation profile-view-error" ng-class="{visible:ctrl.invalidEmail}">נתון חובה</span>*@
+    </p>
+    <p>
+        <span class="form-label">טלפון</span>
+        <input autocomplete="off" disabled class="formText" name="phone" type="text" ng-model="ctrl.message.phone" placeholder="טלפון" />
+        @*    <span class="field-validation profile-view-error" ng-class="{visible:ctrl.invalidPhone}">נתון חובה</span>*@
+    </p>
+    <p>
+        <span class="form-label">סיסמא</span>
+        <button class="openPass main-back-color btn" type="button" ng-click="ctrl.openPasswordWindow()">שינוי סיסמא</button>
+    </p>
+    <p>
+        <span class="form-label">עדכון פרטים</span>
+        <button class="openPass main-back-color btn" type="button" ng-click="ctrl.openAdvisorWindow()">עדכון פרטים</button>
+    </p>
+    <hr />
+    <br />
+    @*<p>
+            <button ng-disabled="ctrl.saveBtnDisabled" class="saveBtn btn" ng-click="ctrl.save()" id="submit">שמירה</button>
+        </p>*@
+
+
+</div>
+<div class="change-pass-view" id="window">
+    <div class="align-right" style="margin-right:145px;">
+        <div>יש להזין סיסמא בת לפחות 7 תווים </div>
+        <div>לפחות ספרה אחת ולפחות אות אחת</div>
+        <div>יש חשיבות לאותיות קטנות וגדולות</div>
+    </div>
+    <p>
+        <span class="form-label">סיסמא נוכחית</span>
+        <input autocomplete="off" class="passwordText" name="senderName" maxlength="20" type="password" ng-model="ctrl.changePassword.current_password" placeholder="סיסמא נוכחית" autofocus />
+        <div class="field-validation change-pass-view-error" ng-class="{visible:ctrl.invalidCurrentPassword}">נתון חובה</div>
+    </p>
+    <p>
+        <span class="form-label">סיסמא חדשה</span>
+        <input autocomplete="off" class="passwordText" name="pass1" type="password" maxlength="20" ng-model="ctrl.changePassword.new_password" placeholder="סיסמא חדשה" autofocus />
+        <div class="field-validation change-pass-view-error" ng-class="{visible:ctrl.invalidNewPassword1}">{{ctrl.invalidNewPassword1Reason}}</div>
+    </p>
+    <p>
+        <span class="form-label">אימות סיסמא חדשה</span>
+        <input autocomplete="off" class="passwordText" name="pass2" type="password" maxlength="20" ng-model="ctrl.changePassword.new_password_2" placeholder="אימות סיסמא חדשה" />
+        <div class="field-validation change-pass-view-error" ng-class="{visible:ctrl.invalidNewPassword2}">סיסמאות אינן זהות</div>
+    
+    </p>
+
+    <button class="blue-button" ng-click="ctrl.handlePassword()">אישור</button>
+    <button class="blue-button" ng-click="ctrl.cancelPass()">ביטול</button>
+
+</div>
+<div class="save-status-view" id="statusWindow">
+    <p>{{ctrl.saveResult}}</p>
+    <button class="closeStatusWindowBtn" type="button" ng-click="ctrl.closeStatusWindow()">אישור</button>
+</div>
+

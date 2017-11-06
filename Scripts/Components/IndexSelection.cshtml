@@ -1,0 +1,60 @@
+﻿<div ng-class="{indexSelection: true, indexSelectionActive: ctrl.indexSelectionEx}" ng-show="ctrl.showIndex()">
+
+    <div class="index-add-text">
+        מדדים להשוואה:
+    </div>
+     
+    <div class="index-selectors">
+
+        <div class="index-selector" ng-show="ctrl.selectionPresentationIndex1">
+            <div class="index-selector-dropdown">
+                <select class="select-index"
+                        danel-drop-down-list
+                        danel-data="ctrl.indexes"
+                        danel-selected="ctrl.selectedIndex1Number"
+                        danel-data-text-field="Name"
+                        danel-data-value-field="SelectedId"></select>
+            </div>
+            <div class="index-selector-remove">
+                <a href="" ng-click="ctrl.removeIndex1()">x הסר</a>
+            </div>
+        </div>
+
+        <div class="index-selector" ng-show="ctrl.selectionPresentationIndex2">
+            <div class="index-selector-dropdown">
+                <select class="select-index"
+                        danel-drop-down-list
+                        danel-data="ctrl.indexes"
+                        danel-selected="ctrl.selectedIndex2Number"
+                        danel-data-text-field="Name"
+                        danel-data-value-field="SelectedId"></select>
+            </div>
+            <div class="index-selector-remove">
+                <a href="" ng-click="ctrl.removeIndex2()">x הסר</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="index-add-action" ng-show="ctrl.showPlusSign">
+        <a href="" ng-click="ctrl.handleAddSelectorRequest()">
+            <img src="~/Content/customer_data/current_customer/plus.png" alt="Add Index">
+        </a>
+    </div>
+
+    <div ng-class="{indexLegend: true, indexSelectionActive: !ctrl.indexSelectionEx}">
+        <div class="index-legend-item">
+            <div class="index-legend-image index-legend-color1"></div>
+            <div class="index-legend-text">התיק שלי</div>
+        </div>
+        <div class="index-legend-item" ng-show="ctrl.selectionPresentationIndex1">
+            <div class="index-legend-image index-legend-color2"></div>
+            <div class="index-legend-text">{{ctrl.index1Name}}</div>
+        </div>
+        <div class="index-legend-item" ng-show="ctrl.selectionPresentationIndex2">
+            <div class="index-legend-image index-legend-color3"></div>
+            <div class="index-legend-text">{{ctrl.index2Name}}</div>
+        </div>
+    </div>
+
+
+</div>

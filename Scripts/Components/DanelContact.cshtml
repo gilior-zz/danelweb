@@ -1,0 +1,46 @@
+﻿
+<div>
+    <div novalidate name="contactForm" class="contact-form" ng-submit="ctrl.send()">
+
+        <div>נא למלא את  כל הפרטים הבאים,</div>
+        <div>לאחר שליחת ההודעה אנו ניצור עמך קשר</div>
+        <p>
+            <span class="label" style=" margin-left: 126px;"> שם</span>
+            <input type="text" ng-model="ctrl.message.senderName" name="senderName" required placeholder="שם ומשפחה" autofocus ng-hide="ctrl.userLoggedIn" />
+            <span ng-show="ctrl.userLoggedIn">{{ctrl.message.senderName}}</span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:55px;">דואר אלקטרוני</span>
+            <input type="email" ng-model="ctrl.message.email" name="email" placeholder="דואר אלקטרוני" required ng-hide="ctrl.userLoggedIn" />
+            <span ng-show="ctrl.userLoggedIn">{{ctrl.message.email}}</span>
+
+        </p>
+        <p>
+            <span class="label" style="margin-left:110px;">טלפון</span>
+            <input class="contact-form-input" type="text" name="phone" ng-model="ctrl.message.phone" placeholder="טלפון" required ng-hide="ctrl.userLoggedIn" />
+            <span ng-show="ctrl.userLoggedIn">{{ctrl.message.phone}}</span>
+
+        </p>
+        <p>
+            <span ng-show="ctrl.userLoggedIn" class="label" style="margin-left:115px;">נושא</span>
+            <span ng-show="ctrl.userLoggedIn">
+                <select class="select-subject"
+                        danel-drop-down-list
+                        danel-data="ctrl.subjects"
+                        danel-selected="ctrl.selectedSubjectID"
+                        danel-data-text-field="SubjectName"
+                        danel-data-value-field="SubjectID"></select>
+            </span>
+        </p>
+        <p>
+            <span class="label" style="margin-left:110px;vertical-align:top">תוכן</span>
+
+            <textarea placeholder=" תוכן הודעה" name="content" rows="5" ng-model="ctrl.message.content" required />
+
+
+        </p>
+        <button ng-disabled="ctrl.disable" class="sendBtn" type="submit" id="submit">{{ctrl.message.status}}</button>
+
+    </div>
+
+</div>

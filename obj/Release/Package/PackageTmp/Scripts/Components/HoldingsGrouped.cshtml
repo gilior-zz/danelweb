@@ -1,0 +1,92 @@
+﻿
+<div class="holdings-grouped component-pane">
+    <div ng-class="{disabledRadioList:!ctrl.holdings.Categories}" class="portfolio-radios-wrapper"> 
+
+
+        @*<danel-holdings-grouped-radios></danel-holdings-grouped-radios>*@
+        <p class="holdings-grouped-Radios-title">הצג מבנה תיק לפי</p>
+
+
+        @*<p>
+
+                <input name="iCheck" type="radio" ng-model="ctrl.currentID" value="1" /><span id="groupingRadioText">אפיק</span>
+            </p>*@
+        <p ng-show="ctrl.selectedWebSiteGroupingItems.indexOf('AssetClass')>-1"><input type="radio" id="1" ng-model="ctrl.currentID" value="1" class="regular-radio" /><label for="1" class="main-border-color css-label radGroup1"><span class="main-fore-color">אפיק</span> </label> </p>
+        @*<p>
+                <input type="radio" ng-model="ctrl.currentID" value="8" /><span id="groupingRadioText">ענף</span>
+            </p>*@
+        <p ng-show="ctrl.selectedWebSiteGroupingItems.indexOf('Industry')>-1"><input type="radio" id="8" ng-model="ctrl.currentID" value="8" class="regular-radio" /><label for="8" class="main-border-color css-label radGroup1"><span class="main-fore-color">ענף</span></label> </p>
+        @*<p>
+                <input type="radio" ng-model="ctrl.currentID" value="9" /><span id="groupingRadioText">מטבע</span>
+            </p>*@
+        <p ng-show="ctrl.selectedWebSiteGroupingItems.indexOf('Currency')>-1"><input type="radio" id="9" ng-model="ctrl.currentID" value="9" class="regular-radio" /><label for="9" class="main-border-color css-label radGroup1"><span class="main-fore-color">מטבע</span></label> </p>
+        @*<p>
+                <input  type="radio" ng-model="ctrl.currentID" value="14" /><span id="groupingRadioText">גאוגרפיה</span>
+            </p>*@
+        <p ng-show="ctrl.selectedWebSiteGroupingItems.indexOf('Geography')>-1"><input type="radio" id="14" ng-model="ctrl.currentID" value="14" class="regular-radio" /><label for="14" class="main-border-color css-label radGroup1"><span class="main-fore-color">גאוגרפיה</span></label></p>
+
+    </div>
+
+
+    <div class="portfolio-dash-wrapper">
+        @*<danel-holdings-grouped-donut></danel-holdings-grouped-donut>*@
+        <div class="chart"
+             danel-chart
+             legend-visible="true"
+           labels-visible="true"
+             danel-model="ctrl.holdings.Categories"
+             danel-chart-type="donut"
+             danel-value-field="PercentOfPortfolio"
+             danel-text-field="Name"
+             danel-chart-area-margin="0,0,0,0"
+             danel-chart-series-label
+             height="400"
+             danel-chart-series-label-template="#= category # #= kendo.format('{0:P}', percentage)#">
+
+        </div>
+    </div>
+
+
+    <div style="" class="portfolio-grid-wrapper">
+        @*<danel-holdings-grouped-grid></danel-holdings-grouped-grid>*@
+        <div class="ng-hide"
+             danel-grid
+             danel-model="ctrl.holdings.Categories"
+             ng-show="!!ctrl">
+            <columns>
+
+                <column>
+                    <title> </title>
+                    <field>Color</field>
+                    <width>30px</width>
+                    <encoded>false</encoded>
+                </column>
+                <column>
+                    <title>{{ctrl.groupName}}</title>
+                    <field>Name</field>
+                    <width>100px</width>
+                    <class>rtl</class>
+                </column>
+                <column>
+                    <title>אחוז מהתיק</title>
+                    <field>PercentOfPortfolio</field>
+                    <format>{0:n2} %</format>
+                    <width>100px</width>
+                </column>
+                <column>
+                    <title>(שווי (שח</title>
+                    <field>Amount</field>
+                    <format>{0:n2}</format>
+                    <width>150px</width>
+                </column>
+            </columns>
+            <pageable>false</pageable>
+        </div>
+        <div class="portfolio-amount-wrapper">
+            <span>סהכ שווי תיק</span>  <span class="portfolio-amount">{{ctrl.totalPortfolioAmount| currency:"&#8362":0}}</span>
+        </div>
+        <div ng-click="ctrl.linkToFunds()" class="funds-composition-label">* הרכב קרנות נאמנות משתקף בהתפלגות</div>
+    </div>
+</div>
+
+

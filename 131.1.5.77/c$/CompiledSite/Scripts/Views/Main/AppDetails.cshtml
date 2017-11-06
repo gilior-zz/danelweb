@@ -1,0 +1,80 @@
+﻿@model AppDetailsModel
+
+
+<script>
+    Danel.appUrl = "@Model.AppUrl";
+    Danel.authCookieName = "@Model.AuthCookieName";
+
+</script>
+
+@*@if (this.Model.CurrentLoginInfo != null && @Model.CurrentLoginInfo.userDetails.authorizedEntityList != "")*@
+@if (this.Model.CurrentLoginInfo != null)
+{
+    <script>
+  
+    Danel.loginResponse = {
+
+        loginDetails: {
+            loginResult: "@Model.CurrentLoginInfo.loginDetails.loginResult",
+            userId: "@Model.CurrentLoginInfo.loginDetails.userId",
+            id: "@Model.CurrentLoginInfo.loginDetails.id",
+            role: "@Model.CurrentLoginInfo.loginDetails.role",
+            authorizedEntityList: @Html.Raw(@Model.CurrentLoginInfo.loginDetails.authorizedEntityList),
+            changePassword: "@Model.CurrentLoginInfo.loginDetails.changePassword",
+
+        },
+
+        userDetails: {
+            userId: "@Model.CurrentLoginInfo.userDetails.userId",
+            name: "@Model.CurrentLoginInfo.userDetails.name",
+            email: "@Model.CurrentLoginInfo.userDetails.email",
+            address: "@Model.CurrentLoginInfo.userDetails.address",
+            phone: "@Model.CurrentLoginInfo.userDetails.phone",
+            authorizedEntityList:@Html.Raw(@Model.CurrentLoginInfo.userDetails.authorizedEntityList==""?"{}":@Model.CurrentLoginInfo.userDetails.authorizedEntityList),
+            lastLoginDate:"@Model.CurrentLoginInfo.userDetails.lastLoginDate"
+        },
+
+        adminDetails: {
+            userId: "@Model.CurrentLoginInfo.adminDetails.userId",
+            name: "@Model.CurrentLoginInfo.adminDetails.name",
+            email: "@Model.CurrentLoginInfo.adminDetails.email",
+            address: "@Model.CurrentLoginInfo.adminDetails.address",
+            phone: "@Model.CurrentLoginInfo.adminDetails.phone",
+        }
+    };
+</script>
+}
+    @*else if (this.Model.CurrentLoginInfo != null)
+        {
+
+            <script>
+                Danel.loginResponse = {
+
+                    loginDetails: {
+                        loginResult: "@Model.CurrentLoginInfo.loginDetails.loginResult",
+                        userId: "@Model.CurrentLoginInfo.loginDetails.userId",
+                        id: "@Model.CurrentLoginInfo.loginDetails.id",
+                        role: "@Model.CurrentLoginInfo.loginDetails.role",
+                        authorizedEntityList: @Html.Raw(@Model.CurrentLoginInfo.loginDetails.authorizedEntityList),
+                        changePassword: "@Model.CurrentLoginInfo.loginDetails.changePassword",
+                    },
+
+                    userDetails: {
+                        userId: "@Model.CurrentLoginInfo.userDetails.userId",
+                        name: "@Model.CurrentLoginInfo.userDetails.name",
+                        email: "@Model.CurrentLoginInfo.userDetails.email",
+                        address: "@Model.CurrentLoginInfo.userDetails.address",
+                        phone: "@Model.CurrentLoginInfo.userDetails.phone",
+                        authorizedEntityList:"",
+                    },
+
+                    adminDetails: {
+                        name: "@Model.CurrentLoginInfo.adminDetails.name",
+                        email: "@Model.CurrentLoginInfo.adminDetails.email",
+                        address: "@Model.CurrentLoginInfo.adminDetails.address",
+                        phone: "@Model.CurrentLoginInfo.adminDetails.phone",
+                    }
+                };
+            </script>
+
+        }*@

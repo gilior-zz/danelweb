@@ -1,0 +1,27 @@
+﻿<div class="danel-footer">
+
+    <div class="components-wrapper">
+
+        <div class="last-login-date" ng-show="ctrl.authService.userDetails.lastLoginDate ">כניסתך האחרונה למערכת בוצעה בתאריך {{ctrl.authService.userDetails.lastLoginDate}}</div>
+        <div class="links-wrapper">
+            <span ng-click="ctrl.$scope.termOfUse()">תנאי שימוש</span>
+            <span>|</span>
+            <span ng-click="ctrl.$scope.privacyPolicy()">מדיניות פרטיות</span>
+            <span>|</span>
+            <a href="{{ctrl.$scope.companyWebsiteLink}}" target="_blank">{{ctrl.$scope.companyDisplayName}}</a>
+            <span ng-show="ctrl.authService.userDetails.userId">|</span>
+            <span ng-show="ctrl.authService.userDetails.userId" ng-click="ctrl.$scope.contact()">צור קשר</span>
+            @*  <a  href="#" ng-click="ctrl.contact()">צור קשר</a>*@
+
+        </div>
+        <div class="logo-wrapper">
+            <img src="~/Content/customer_data/current_customer/danel_logo.png" />
+        </div>
+    </div>
+    <div class="embedded" id="window">
+
+
+    </div>
+
+
+</div>

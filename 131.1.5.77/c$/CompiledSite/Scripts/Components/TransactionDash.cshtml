@@ -1,0 +1,104 @@
+﻿<div class="transaction-dash dash">
+
+    @*<div class="component-title">
+            <a href="" ng-click="ctrl.goToPage()">
+                <img class=" component-title-img" src="@Url.Content("~/Content/images/icons/transaction-icon.png")" alt="" />
+                <div class="component-title-text">תנועות</div>
+            </a>
+        </div>*@
+
+    <div class="ng-hide"
+         danel-grid
+         danel-model="ctrl.model.Transactions"
+         danel-grid-set="ctrl.setgrid"
+         ng-show="!!ctrl">
+        <div></div>
+        <columns>
+            <column>
+                <title>תאריך</title>
+                <type>date</type>
+                <field>Date</field>
+                <format>{0:d}</format>
+                <width>120px</width>
+            </column>
+
+            <column>
+                <title>פעולה</title>
+                <field>ActionType</field>
+                <width>150px</width>
+            </column>
+
+            <column>
+                <title>מספר נ"ע</title>
+                <field>SecurityID</field>
+                <width>130px</width>
+                <type>number</type>
+            </column>
+
+            <column>
+                <title>שם נ"ע</title>
+                <field>SecurityName</field>
+                <width>150px</width>
+                <class>rtl</class>
+                <type>string</type>
+            </column>
+
+            <column class="ltr">
+                <title>כמות</title>
+                <field>Quantity</field>
+                <width>120px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+                @*   <footertemplate>"#=sum#"</footertemplate>*@
+            </column>
+
+            <column>
+                <title>שער פעולה</title>
+                <field>Rate</field>
+                <width>100px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+            </column>
+
+            <column>
+                <title>מטבע</title>
+                <field>Currency</field>
+                <width>80px</width>
+                <type>string</type>               
+            </column>
+
+            <column>
+                <title>(עמלה (שח</title>
+                <field>Commision</field>
+                <width>100px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+            </column>
+
+            <column>
+                <title>(מס (שח</title>
+                <field>Tax</field>
+                <width>80px</width>
+                <format>{0:n2}</format>
+                <type>number</type>
+            </column>
+
+            <column>
+                <title>(סכום (שח</title>
+                <field>Amount</field>
+                <format>{0:n2}</format>
+                <type>number</type>
+            </column>
+        </columns>
+        <pageable>false</pageable>
+    </div>
+
+    @*<div class="component-link">
+            <a href="" ng-click="ctrl.goToPage()">
+                <div class="component-link-text">לכל התנועות</div>
+                <img class="component-link-img" src="@Url.Content("~/Content/images/icons/left-link-icon.png")" alt="" />
+            </a>
+        </div>*@
+
+</div>
+ר

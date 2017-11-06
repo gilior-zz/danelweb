@@ -1,0 +1,9 @@
+﻿<div  ng-show="ctrl.authService.adminDetails.userId && ctrl.state.current.name!='login'" class="admin-panel">
+    <div class="admin-view-panel">
+        <p>
+            <span ng-show="ctrl.authService.userDetails.userId"> שלום {{ctrl.authService.adminDetails.name}} ,אתה מחובר כעת כמשתמש {{ctrl.authService.userDetails.name}}, מספר תעודת זהות: {{ctrl.authService.userDetails.userId}}</span>
+            <span ng-hide="ctrl.authService.userDetails.userId"> שלום {{ctrl.authService.adminDetails.name}} ,אינך מחובר כעת לאף משתמש</span>
+            <a href="#" ng-click="ctrl.logOutAdmin()">יציאה מהמערכת</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿<span class="yield-widget ng-hide" ng-class="ctrl.getClass()"  ng-show="!!ctrl">
+    @*<span class="arrow-up" ng-show="ctrl.positive && ctrl.validNumber">&#9650;</span>*@
+    @*<span class="arrow-down" ng-show="!ctrl.positive && ctrl.validNumber">&#9660;</span>*@
+    <span ng-class="" class="value">{{ctrl.generateText()}}</span><span ng-show="ctrl.validNumber">%</span>
+    <span ng-show="ctrl.validNumber" class="sign">{{ctrl.sign}}</span>
+</span>
+
+@*<span class="yield-widget ng-hide" ng-class="{positive: ctrl.positive, negative: !ctrl.positive}" ng-show="!!ctrl">
+        <span class="arrow-up" ng-show="ctrl.positive">&#9650;</span>
+        <span class="arrow-down" ng-show="!ctrl.positive">&#9660;</span>
+        <span class="value">{{ctrl.absValue}}%</span>
+        <span class="sign">{{ctrl.sign}}</span>
+    </span>*@

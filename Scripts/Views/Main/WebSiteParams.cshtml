@@ -1,0 +1,32 @@
+﻿@model  Dictionary<Danel.Common.WebParameter, string>
+
+
+
+
+
+@if (this.Model != null)
+{
+
+
+    <script>
+
+        Danel.webSiteParams = {
+            @foreach(var i in this.Model)
+                {
+                  <text>
+
+            @((int)i.Key): "@i.Value",
+            </text>
+
+
+                }
+
+        }
+
+
+
+
+
+    </script>
+
+}

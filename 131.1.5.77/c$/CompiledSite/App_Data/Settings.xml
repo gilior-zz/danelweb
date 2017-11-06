@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Settings>
+  <Globals>
+    <Global>
+      <Name>DEMO_MODE</Name>
+      <Value>true</Value>
+    </Global>
+    
+    <Global>
+      <Name>ENABLE_BUNDLING_AND_MINIFICATION</Name>
+      <Value>false</Value>
+    </Global>
+
+    <Global>
+      <Name>ENABLE_CSRF_VALIDATION</Name>
+      <Value>true</Value>
+    </Global>
+
+    <Global>
+      <Name>CSRF_TOKEN_NAME</Name>
+      <Value>DANEL_CSRF_TOKEN</Value>
+    </Global>
+
+    
+  </Globals>
+</Settings>

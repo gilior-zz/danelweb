@@ -1,0 +1,14 @@
+﻿<div class="top-menu-component">
+    <div ng-show="ctrl.state.current.name!='login' && ctrl.authService.userDetails.name && ctrl.authService.loginDetails && ctrl.authService.loginDetails.role!='ResetPassword' && ctrl.state.current.name!='admin'" class="top-menu-innerWrapper">
+        <div>
+            <div class="top-menu-date-wrapper">
+                <span class="top-menu-date-caption">הנתונים באתר נכונים לתאריך</span><span class="">{{(ctrl.dataDate|date:'dd-MM-yyyy')||  '-'}}</span>
+              @*  <span ng-show="!ctrl.dataDate">  אין נתונים</span>*@
+            </div>
+
+            <div class="menu-filter" id="toolbar" kendo-toolbar k-options="toolbarOptions">
+            </div>
+        </div>
+        <br />
+    </div>
+</div>

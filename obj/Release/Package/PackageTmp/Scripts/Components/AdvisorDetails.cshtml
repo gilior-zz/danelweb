@@ -1,0 +1,49 @@
+﻿<div class="advisor-Info-componnet" ng-show="ctrl.state.current.name!='login'&& ctrl.state.current.name!='admin' && ctrl.allowWebMessageToAdvisor">
+    <div class="advisor-window">
+        <img ng-click="ctrl.handleWindow()" class="close float-left pointer" src="~/Content/customer_data/current_customer/x.png" alt="" />
+        @*<div class="header">
+                <img ng-click="ctrl.handleWindow()" class="icon" src="~/Content/images/icons/close.png" alt="" />
+            </div>*@
+        <div class="body">
+
+            <img class="advisor-image" ng-click="ctrl.handleWindow()" ng-src="data:image/jpeg;base64,{{ctrl.contactAdvisorInfo.imgString}}" alt="My Advisor" />
+
+            <span class="main-fore-color advisor-name">{{ctrl.contactAdvisorInfo.advisorName||'יועץ כללי'}}</span>
+            <br />
+
+            <div>
+                <span class="advisor-phone"><img class="icon" ng-src="~/Content/customer_data/current_customer/phone.png" alt="Alternate Text" /> {{ctrl.contactAdvisorInfo.advisorPhone||'לא קיים'}}</span>
+            </div>
+            <div>
+                <span class="advisor-email"><img class="icon" ng-src="~/Content/customer_data/current_customer/email.png" alt="Alternate Text" />{{ctrl.contactAdvisorInfo.advisorEmail||'לא קיים'}}</span>
+            </div>
+
+            <div>
+                <button ng-click="ctrl.handleSendSection()" class="main-back-color advisor-button">שלח הודעה ליועץ</button>
+                <span ng-show="ctrl.$scope.sendSuccess" id="status-label-success" class="status-label">נשלח בהצלחה</span>
+            </div>
+
+        </div>
+        <div ng-class="{disabled:ctrl.executeSending}" class="message-window">
+            <textarea cols="39" rows="5" ng-model="ctrl.content" maxlength="180"></textarea>
+            <select name="mySelect" id="mySelect"
+                    ng-options="v for (k,v)  in ctrl.contactAdvisorInfo.builtInMessages track by k"
+                    ng-model="ctrl.selectedOption"></select>
+            <button ng-click="ctrl.sendToAdvisor()" ng-class="{disabled:!ctrl.content}" class="main-back-color button">שליחה</button>
+            <span ng-show="ctrl.$scope.sendFail" id="status-label-fail" class="status-label">שליחה נכשלה</span>
+            <span>{{ctrl.characterCounter}}</span>
+            <span>מתוך</span>
+            <span>180</span>
+        </div>
+        <div class="footer  white-font larger-font">
+            <span class="phone-label">תמיכה טלפונית:</span>
+            <span class="phone">{{ctrl.contactAdvisorInfo.supportPhone||'לא קיים'}}</span>
+        </div>
+    </div>
+
+    <img class="advisor-image pointer" ng-click="ctrl.handleWindow()" ng-src="data:image/jpeg;base64,{{ctrl.contactAdvisorInfo.imgString}}" alt="My Advisor" />
+    <span class="my-advisor-label right-5-margin pointer" ng-click="ctrl.handleWindow()">מנהל ההשקעות האישי:</span>
+    <span class="bold right-5-margin pointer" ng-click="ctrl.handleWindow()">{{ctrl.contactAdvisorInfo.advisorName||'יועץ כללי'}}</span>
+    <img class="my-advisor-arrow right-5-margin pointer" ng-click="ctrl.handleWindow()" ng-src="~/Content/customer_data/current_customer/hello.png" />
+
+</div>
